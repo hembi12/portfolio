@@ -1,26 +1,29 @@
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import hmDevImage from "/src/assets/hmdev.jpg";
+import birthdayImage from "/src/assets/birthday.jpg";
+import landingImage from "/src/assets/landing.jpg";
 
 const projects = [
   {
-    title: "AI-Powered SaaS",
-    description: "An AI-driven SaaS platform that automates business workflows and enhances productivity.",
-    image: "https://via.placeholder.com/400x250",
-    link: "https://example.com/project1",
-    code: "https://github.com/example/project1",
+    title: "Portfolio V1",
+    description: "I developed the first version of my portfolio website to showcase my skills, projects, and experience.",
+    image: hmDevImage,
+    link: "https://www.hectormartil.dev/",
+    code: "https://github.com/hembi12/my-portfolio",
   },
   {
-    title: "E-Commerce Platform",
-    description: "A scalable and modern e-commerce platform with seamless payment integration.",
-    image: "https://via.placeholder.com/400x250",
-    link: "https://example.com/project2",
-    code: "https://github.com/example/project2",
+    title: "Landing Page",
+    description: "I developed an interactive landing page mockup focused on optimizing the presentation of key elements.",
+    image: landingImage,
+    link: "https://landing-page-woad-pi-82.vercel.app/",
+    code: "https://github.com/hembi12/landing-page",
   },
   {
-    title: "Mobile App",
-    description: "A cross-platform mobile app with real-time data synchronization and offline support.",
-    image: "https://via.placeholder.com/400x250",
-    link: "https://example.com/project3",
-    code: "https://github.com/example/project3",
+    title: "Birthday Invitation",
+    description: "I created an interactive invitation page for my birthday celebration with an RSVP form.",
+    image: birthdayImage,
+    link: "https://rsvp-cumple.web.app/",
+    code: "https://github.com/hembi12/cumplea-os_30",
   },
 ];
 

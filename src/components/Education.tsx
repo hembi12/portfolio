@@ -41,7 +41,7 @@ const Education = () => {
               <img src={edu.logo} alt={edu.institution} className="w-12 h-12 rounded-full object-cover" />
               <div>
                 <h3 className="text-lg font-semibold">
-                  <a href={edu.link} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-gray-300 hover:underline">
+                  <a href={edu.link} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-gray-400 hover:underline">
                     {edu.institution}
                   </a>
                 </h3>
@@ -66,7 +66,7 @@ const Education = () => {
               <img src={cert.logo} alt={cert.institution} className="w-12 h-12 rounded-full object-cover" />
               <div>
                 <h3 className="text-lg font-semibold">
-                  <a href={cert.pdf} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-gray-300 hover:underline">
+                  <a href={cert.pdf} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-gray-400 hover:underline">
                     {cert.institution}
                   </a>
                 </h3>
