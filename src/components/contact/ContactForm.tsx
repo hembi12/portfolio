@@ -1,12 +1,17 @@
-// components/contact/ContactForm.tsx
-import { useState } from "react";
-import PrivacyCheckbox from "./PrivacyCheckBox";
+import { useState, useEffect } from "react";
+import PrivacyCheckbox from "./PrivacyCheckbox";
 import InputField from "./InputField";
 import SelectField from "./SelectField";
 import TextAreaField from "./TextAreaField";
 
 const ContactForm: React.FC = () => {
-  const [accepted, setAccepted] = useState<boolean>(false);
+  const [accepted, setAccepted] = useState<boolean>(() => {
+    return localStorage.getItem("privacyAccepted") === "true";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("privacyAccepted", String(accepted));
+  }, [accepted]);
 
   return (
     <div className="mt-6">
