@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
         {fromContactForm && (
           <div className="flex justify-center mt-8">
             <button
-              onClick={() => navigate("/#contact")}
+              onClick={() => navigate("/")}
               className="px-6 py-2 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
             >
               Go Back
