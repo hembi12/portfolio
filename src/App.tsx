@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/contact/ContactForm";
 import Education from "./components/Education";
 import Footer from "./components/Footer";
-import Dock from "./components/Dock";
+import Dock from "./components/dock/Dock";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { FC } from "react";
 
