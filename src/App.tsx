@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/about/About";
-import WorkExperience from "./components/WorkExperience";
-import Home from "./components/Home";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import WorkExperience from "./components/workexperience/WorkExperience";
+import Home from "./components/home/Home";
+import Projects from "./components/projects/Projects";
+import Skills from "./components/skills/Skills";
 import Contact from "./components/contact/ContactForm";
-import Education from "./components/Education";
-import Footer from "./components/Footer";
+import Education from "./components/education/Education";
+import Footer from "./components/footer/Footer";
 import Dock from "./components/dock/Dock";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { FC } from "react";
