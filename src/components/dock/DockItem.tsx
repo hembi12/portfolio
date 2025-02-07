@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 interface DockItemProps {
   id: string;
   Icon: React.ElementType;
-  label: string;
+  label: string; // Asegúrate de que label es string
   active: boolean;
   hovered: string | null;
   setHovered: (id: string | null) => void;

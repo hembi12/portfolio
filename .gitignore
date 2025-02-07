@@ -7,12 +7,18 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencias y compilaciones
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Archivos de entorno (variables privadas)
+.env
+.env.local
+.env.*.local
+
+# Directorios y archivos de editores
 .vscode/*
 !.vscode/extensions.json
 .idea
