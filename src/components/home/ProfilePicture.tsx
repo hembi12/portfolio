@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import profilePic from "/src/assets/profile-picture.png";
 
 interface ProfilePictureProps {
@@ -11,11 +12,12 @@ const sizeClasses = {
   large: "w-40 h-40",
 };
 
-const ProfilePicture: React.FC<ProfilePictureProps> = ({ alt = "Profile picture", size = "medium" }) => {
+const ProfilePicture: React.FC<ProfilePictureProps> = ({ alt, size = "medium" }) => {
+  const { t } = useTranslation();
   return (
     <img
       src={profilePic}
-      alt={alt}
+      alt={alt || t("profile_picture_alt")} // Traducción del alt
       className={`${sizeClasses[size]} rounded-full object-cover`}
     />
   );
