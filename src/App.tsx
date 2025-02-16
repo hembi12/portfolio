@@ -1,16 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./components/about/About";
-import WorkExperience from "./components/workexperience/WorkExperience";
-import Home from "./components/home/Home";
-import Projects from "./components/projects/Projects";
-import Skills from "./components/skills/Skills";
-import Contact from "./components/contact/ContactForm";
-import Education from "./components/education/Education";
-import Footer from "./components/footer/Footer";
-import Dock from "./components/dock/Dock";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import NotFound from "./pages/NotFound"; // Importamos la nueva página 404
-import { FC } from "react";
+import { FC, Suspense, lazy } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const About = lazy(() => import("./components/about/About"));
+const WorkExperience = lazy(() => import("./components/workexperience/WorkExperience"));
+const Home = lazy(() => import("./components/home/Home"));
+const Projects = lazy(() => import("./components/projects/Projects"));
+const Skills = lazy(() => import("./components/skills/Skills"));
+const Contact = lazy(() => import("./components/contact/ContactForm"));
+const Education = lazy(() => import("./components/education/Education"));
+const Footer = lazy(() => import("./components/footer/Footer"));
+const Dock = lazy(() => import("./components/dock/Dock"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+const FallbackLoader: FC = () => (
+  <div className="min-h-screen flex items-center justify-center text-white">
+    <p>Loading...</p>
+  </div>
+);
 
 const MainLayout: FC = () => (
   <div className="min-h-screen bg-black text-white flex flex-col items-center px-6 md:px-16 lg:px-32 py-8">
@@ -31,16 +40,24 @@ const MainLayout: FC = () => (
 const App: FC = () => {
   return (
     <Router>
-      <Routes>
-        {/* Página principal con el diseño original */}
-        <Route path="/" element={<MainLayout />} />
+      <Suspense fallback={<FallbackLoader />}>
+        <Routes>
+          <Route path="/" element={<MainLayout />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
 
-        {/* Página de Política de Privacidad */}
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
-        {/* Página 404 para rutas no encontradas */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      {/* ToastContainer global para manejar notificaciones en toda la app */}
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover={false}
+        draggable={false}
+        theme="dark"
+      />
     </Router>
   );
 };

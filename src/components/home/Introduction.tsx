@@ -12,10 +12,12 @@ const Introduction: React.FC = () => {
           <span className="relative">
             <WordRotate words={["Héctor", "Martil"]} className="inline-flex" />
           </span>{" "}
-          <span>👋</span>
+          <span aria-hidden="true" role="img" className="ml-1">
+            👋
+          </span>
         </span>
       </h1>
-      <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 max-w-3xl mx-auto md:mx-0">
+      <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 max-w-2xl mx-auto md:mx-0">
         {t("home_description")}
       </p>
     </div>
