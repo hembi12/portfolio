@@ -9,6 +9,7 @@ import Education from "./components/education/Education";
 import Footer from "./components/footer/Footer";
 import Dock from "./components/dock/Dock";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import NotFound from "./pages/NotFound"; // Importamos la nueva página 404
 import { FC } from "react";
 
 const MainLayout: FC = () => (
@@ -23,7 +24,7 @@ const MainLayout: FC = () => (
       <section id="education"><Education /></section>
     </div>
     <Footer />
-    <Dock /> {/* Se mantiene aquí para que siempre esté visible */}
+    <Dock />
   </div>
 );
 
@@ -36,6 +37,9 @@ const App: FC = () => {
 
         {/* Página de Política de Privacidad */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+        {/* Página 404 para rutas no encontradas */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

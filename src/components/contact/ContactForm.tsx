@@ -3,10 +3,13 @@ import PrivacyCheckbox from "./PrivacyCheckbox";
 import InputField from "./InputField";
 import SelectField from "./SelectField";
 import TextAreaField from "./TextAreaField";
+import { useTranslation } from "react-i18next"; // Importamos el hook para traducción
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || "";
 
 const ContactForm: React.FC = () => {
+  const { t } = useTranslation(); // Inicializamos el hook para traducción
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,25 +41,25 @@ const ContactForm: React.FC = () => {
     const newErrors = { name: "", email: "", subject: "", message: "" };
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
+      newErrors.name = t("contact_error_name");
       valid = false;
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = t("contact_error_email");
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid email format.";
+      newErrors.email = t("contact_error_email");
       valid = false;
     }
 
     if (!formData.subject.trim()) {
-      newErrors.subject = "Please select a subject.";
+      newErrors.subject = t("contact_error_subject");
       valid = false;
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message cannot be empty.";
+      newErrors.message = t("contact_error_message");
       valid = false;
     }
 
@@ -89,11 +92,11 @@ const ContactForm: React.FC = () => {
         setSuccess(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setError("Failed to send message. Please try again later.");
+        setError(t("contact_error_general"));
       }
     } catch (err) {
       console.error("Error sending form:", err);
-      setError("An error occurred. Please check your connection.");
+      setError(t("contact_error_connection"));
     } finally {
       setLoading(false);
     }
@@ -102,20 +105,20 @@ const ContactForm: React.FC = () => {
   return (
     <div className="mt-6">
       <h2 className="bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-center md:text-left">
-        Contact Me
+        {t("contact_title")}
       </h2>
       <p className="text-gray-100 text-sm sm:text-base md:text-md lg:text-lg mt-2 text-center max-w-3xl mx-auto md:text-left md:mx-0">
-        Feel free to reach out by filling out the form below.
+        {t("contact_description")}
       </p>
       <form onSubmit={handleSubmit} className="mt-6 max-w-md mx-auto bg-black border border-white p-6 rounded-lg">
-        <InputField label="Name" id="name" type="text" placeholder="Enter your name..." value={formData.name} onChange={handleInputChange} error={errors.name} />
-        <InputField label="Email" id="email" type="email" placeholder="Enter your email..." value={formData.email} onChange={handleInputChange} error={errors.email} />
+        <InputField label={t("contact_name")} id="name" type="text" placeholder={t("contact_name")} value={formData.name} onChange={handleInputChange} error={errors.name} />
+        <InputField label={t("contact_email")} id="email" type="email" placeholder={t("contact_email")} value={formData.email} onChange={handleInputChange} error={errors.email} />
         <SelectField id="subject" value={formData.subject} onChange={handleInputChange} error={errors.subject} />
         <TextAreaField id="message" value={formData.message} onChange={handleInputChange} error={errors.message} />
         <PrivacyCheckbox accepted={accepted} setAccepted={setAccepted} />
 
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-        {success && <p className="text-green-500 text-center text-sm mt-2">Message sent successfully!</p>}
+        {success && <p className="text-green-500 text-center text-sm mt-2">{t("contact_success")}</p>}
 
         <button
           type="submit"
@@ -123,7 +126,7 @@ const ContactForm: React.FC = () => {
             }`}
           disabled={!accepted || loading}
         >
-          {loading ? "Sending..." : "Send Message"}
+          {loading ? t("contact_button_sending") : t("contact_button_send")}
         </button>
       </form>
     </div>

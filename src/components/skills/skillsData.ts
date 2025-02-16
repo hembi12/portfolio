@@ -22,7 +22,7 @@ export const primarySkills: Skill[] = [
 export const secondarySkills: Skill[] = [
   { icon: BiLogoVisualStudio, className: "text-blue-500 text-3xl" },
   { icon: FaGitAlt, className: "text-red-500 text-3xl" },
-  { icon: FaGithub, className: "text-white dark:text-white text-3xl" },
+  { icon: FaGithub, className: "text-white text-3xl" },
   { icon: FaNodeJs, className: "text-green-500 text-3xl" },
   { icon: SiExpress, className: "text-white text-3xl" },
   { icon: SiFirebase, className: "text-yellow-500 text-3xl" },

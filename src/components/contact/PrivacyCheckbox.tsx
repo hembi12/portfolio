@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Importar el hook para traducción
 
 interface PrivacyCheckboxProps {
   accepted: boolean;
@@ -6,7 +7,8 @@ interface PrivacyCheckboxProps {
 }
 
 const PrivacyCheckbox: React.FC<PrivacyCheckboxProps> = ({ accepted, setAccepted }) => {
-  const location = useLocation(); // Para obtener la URL actual
+  const { t } = useTranslation(); // Inicializar el hook para traducción
+  const location = useLocation();
 
   return (
     <div className="mb-4 flex items-center">
@@ -16,15 +18,20 @@ const PrivacyCheckbox: React.FC<PrivacyCheckboxProps> = ({ accepted, setAccepted
         className="mr-2 cursor-pointer"
         checked={accepted}
         onChange={() => setAccepted(!accepted)}
+        aria-checked={accepted}
       />
-      <label htmlFor="privacy-policy" className="text-white text-sm cursor-pointer">
-        I accept the{" "}
+      <label
+        htmlFor="privacy-policy"
+        className="text-white text-sm cursor-pointer"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {t("privacy_accept")}{" "}
         <Link
           to="/privacy-policy"
-          state={{ fromContactForm: location.pathname }} // Enviar la ubicación actual
+          state={{ fromContactForm: location.pathname }}
           className="text-gray-200 hover:text-gray-300 underline"
         >
-          Privacy Policy
+          {t("privacy_policy")}
         </Link>
       </label>
     </div>
