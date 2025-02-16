@@ -55,25 +55,41 @@ i18n
           contact_error_connection: "An error occurred. Please check your connection.",
           privacy_accept: "I accept the",
           privacy_policy: "Privacy Policy",
+          footer_all_rights_reserved: "All rights reserved.",
           work_experience: {
             title: "Work Experience",
             jobs: {
               paypal: {
                 company: "PayPal",
                 title: "Customer Solutions Agent",
-                duration: "July 2023 - Present"
+                duration: "July 2023 - Present",
               },
               tp: {
                 company: "Teleperformance",
                 title: "Customer Solutions Agent - Team Lead",
-                duration: "August 2019 - June 2023"
+                duration: "August 2019 - June 2023",
               },
               sila: {
                 company: "Grupo SILA",
                 title: "Security Monitoring Operator",
-                duration: "November 2015 - July 2019"
-              }
-            }
+                duration: "November 2015 - July 2019",
+              },
+            },
+          },
+          education_experience: {
+            title: "Education",
+            utel: "Latin American Technological University Online",
+            bachelors_it_admin: "Bachelor's Degree in Information Technology Administration",
+            feb_2022_present: "February 2022 - Present",
+            devf: "DEV.F",
+            master_coding: "Master in Coding: Backend, Frontend, and Fullstack Development",
+            jun_2024_present: "June 2024 - Present",
+          },
+          certificates: {
+            title: "Certificates",
+            "utel_institution": "Latin American Technological University Online",
+            "utel_diploma_systems_analysis": "International Diploma in Computer Systems Analysis",
+            "utel_completed_2025": "Completed 2025"
           },
           tweets: {
             cat_lover: "My black cat, 15 years at my side: wise, independent, and affectionate in her own way. Her purr and gaze say it all. 😺❤️",
@@ -86,9 +102,9 @@ i18n
             tars: "Interstellar is art: science, emotions, and a soundtrack that leaves you traveling through time. 🚀 🪐",
             top_food: "Mexican food is on another level: tacos, mole, pozole, and that perfect touch of spice makes it the best. 🌶️ 🇲🇽",
             wander_lust: "Traveling is the best investment: discover, learn, and create memories that last forever. ✈️ 🏖️",
-            zero_miedo: "Wrestling is pure passion. Heroes, villains, and the spectacle that always gives you chills. 💪 🔥"
-          }
-        }
+            zero_miedo: "Wrestling is pure passion. Heroes, villains, and the spectacle that always gives you chills. 💪 🔥",
+          },
+        },
       },
       es: {
         translation: {
@@ -138,33 +154,62 @@ i18n
           contact_error_connection: "Ocurrió un error. Por favor verifica tu conexión.",
           privacy_accept: "Acepto la",
           privacy_policy: "Política de Privacidad",
+          footer_all_rights_reserved: "Todos los derechos reservados.",
           work_experience: {
             title: "Experiencia Laboral",
             jobs: {
               paypal: {
                 company: "PayPal",
                 title: "Agente de Soluciones al Cliente",
-                duration: "Julio 2023 - Presente"
+                duration: "Julio 2023 - Presente",
               },
               tp: {
                 company: "Teleperformance",
                 title: "Agente de Soluciones al Cliente - Líder de Equipo",
-                duration: "Agosto 2019 - Junio 2023"
+                duration: "Agosto 2019 - Junio 2023",
               },
               sila: {
                 company: "Grupo SILA",
                 title: "Operador de Monitoreo de Seguridad",
-                duration: "Noviembre 2015 - Julio 2019"
-              }
-            }
-          }
-        }
-      }
+                duration: "Noviembre 2015 - Julio 2019",
+              },
+            },
+          },
+          education_experience: {
+            title: "Educación",
+            utel: "Universidad Tecnológica Latinoamericana en Línea",
+            bachelors_it_admin: "Licenciatura en Administración de Tecnologías de la Información",
+            feb_2022_present: "Febrero 2022 - Presente",
+            devf: "DEV.F",
+            master_coding: "Maestría en Programación: Desarrollo Backend, Frontend y Fullstack",
+            jun_2024_present: "Junio 2024 - Presente",
+          },
+          certificates: {
+            title: "Certificados",
+            utel: "Universidad Tecnológica Latinoamericana en Línea",
+            diploma_systems_analysis: "Diplomado Internacional en Análisis de Sistemas Informáticos",
+            completed_2025: "Completado en 2025",
+          },
+          tweets: {
+            cat_lover: "Mi gatita negra, 15 años a mi lado: sabia, independiente y cariñosa a su manera. Su ronroneo y mirada lo dicen todo. 😺❤️",
+            coder_life: "Ser desarrollador significa convertir ideas en realidad. Código, música y muchas noches sin dormir arreglando bugs. 🤖 💾",
+            family_first: "La familia significa amor, risas y apoyo incondicional. Nada mejor que una comida casera con los que más quieres. 😊 🏡",
+            f1_fan: "La F1 es velocidad, estrategia y adrenalina. Cada carrera es una señal de que todo puede ser impredecible. 🏁 🏎️",
+            in_love: "Tener a alguien especial es lo mejor: amor, apoyo y momentos únicos que hacen que todo sea mejor. 😍 💕",
+            music_addict: "La música siempre está ahí: inspira, motiva y acompaña cada momento. La vida necesita una gran banda sonora. 🎵 🎸",
+            my_friends: "Nada supera las risas, momentos y locas aventuras con amigos. Siempre hacen la vida más divertida. 🥳 🎮",
+            tars: "Interestelar es arte: ciencia, emociones y una banda sonora que te deja viajando en el tiempo. 🚀 🪐",
+            top_food: "La comida mexicana está en otro nivel: tacos, mole, pozole y ese toque perfecto de picante la hacen la mejor. 🌶️ 🇲🇽",
+            wander_lust: "Viajar es la mejor inversión: descubres, aprendes y creas recuerdos que duran para siempre. ✈️ 🏖️",
+            zero_miedo: "La lucha libre es pura pasión. Héroes, villanos y el espectáculo que siempre pone la piel de gallina. 💪 🔥",
+          },
+        },
+      },
     },
     fallbackLng: "es",
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
 export default i18n;

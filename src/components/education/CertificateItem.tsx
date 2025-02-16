@@ -1,11 +1,13 @@
-// CertificateItem.tsx
 import { Certificate } from "./interfaces";
+import { useTranslation } from "react-i18next";
 
 interface CertificateItemProps {
   certificate: Certificate;
 }
 
 const CertificateItem: React.FC<CertificateItemProps> = ({ certificate }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex items-center justify-between space-x-4">
       <div className="flex items-center space-x-4">
@@ -13,13 +15,17 @@ const CertificateItem: React.FC<CertificateItemProps> = ({ certificate }) => {
         <div>
           <h3 className="text-lg font-semibold">
             <a href={certificate.pdf} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-gray-400 hover:underline">
-              {certificate.institution}
+              {t(`certificates.${certificate.institution}`, certificate.institution)}
             </a>
           </h3>
-          <p className="text-gray-300">{certificate.title}</p>
+          <p className="text-gray-300">
+            {t(`certificates.${certificate.title}`, certificate.title)}
+          </p>
         </div>
       </div>
-      <p className="text-gray-400 text-sm">{certificate.duration}</p>
+      <p className="text-gray-400 text-sm">
+        {t(`certificates.${certificate.duration}`, certificate.duration)}
+      </p>
     </div>
   );
 };
