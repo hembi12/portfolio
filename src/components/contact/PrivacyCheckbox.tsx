@@ -31,7 +31,7 @@ const PrivacyCheckbox: React.FC<PrivacyCheckboxProps> = ({ accepted, setAccepted
           state={{ fromContactForm: location.pathname }}
           className="text-gray-200 hover:text-gray-300 underline"
         >
-          {t("privacy_policy")}
+          {t("privacy_policy_contact")}
         </Link>
       </label>
     </div>

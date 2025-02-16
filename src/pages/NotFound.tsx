@@ -16,7 +16,7 @@ const NotFound = () => {
         onClick={() => navigate("/")}
         className="px-4 py-2 bg-white text-black rounded-lg text-sm md:text-base hover:bg-gray-300 transition flex items-center gap-2"
       >
-        <FaHome className="text-lg" /> Go Back Home
+        <FaHome className="text-lg" /> Go Back
       </button>
     </div>
   );
