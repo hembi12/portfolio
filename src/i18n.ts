@@ -22,7 +22,7 @@ i18n
           education: "Education",
           changeLanguage: "Change Language",
           home_greeting: "Hi, I'm",
-          home_description: "Customer service expert becoming a full-stack developer. Passionate about programming who sits in front of his monitors every day to learn something new and improve.",
+          home_description: "Customer service expert becoming a full-stack developer. Passionate about programming who sits in front of his monitors every day to improve.",
           profile_picture_alt: "Profile picture",
           about_title: "About Me",
           about_description: "My creativity is born from my passions:",
@@ -80,6 +80,8 @@ i18n
               },
             },
           },
+          cv_view: "View CV",
+          cv_download: "Download CV",
           education_experience: {
             title: "Education",
             utel: "Latin American Technological University Online",
@@ -217,6 +219,8 @@ i18n
               },
             },
           },
+          cv_view: "Ver CV",
+          cv_download: "Descargar CV",
           education_experience: {
             title: "Educación",
             utel: "Universidad Tecnológica Latinoamericana en Línea",
