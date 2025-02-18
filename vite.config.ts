@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
+import sitemap from "vite-plugin-sitemap";
 
 export default defineConfig({
   plugins: [
@@ -55,6 +56,11 @@ export default defineConfig({
           }
         ]
       }
+    }),
+    sitemap({
+      hostname: "https://tu-dominio.com", // ⚠️ REEMPLAZA con tu dominio real
+      exclude: ["/privacy-policy", "/404"], // Excluye rutas irrelevantes del sitemap
+      extensions: [".html"]
     })
   ],
   resolve: {

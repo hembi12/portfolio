@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FC, Suspense, lazy } from "react";
 import { ToastContainer } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
 import "react-toastify/dist/ReactToastify.css";
 
 const About = lazy(() => import("./components/about/About"));
@@ -22,43 +23,47 @@ const FallbackLoader: FC = () => (
 );
 
 const MainLayout: FC = () => (
-  <div className="min-h-screen bg-black text-white flex flex-col items-center px-6 md:px-16 lg:px-32 py-8">
-    <div className="max-w-2xl w-full">
-      <section id="home"><Home /></section>
-      <section id="about"><About /></section>
-      <section id="projects"><Projects /></section>
-      <section id="skills"><Skills /></section>
-      <section id="contact"><Contact /></section>
-      <section id="workexperience"><WorkExperience /></section>
-      <section id="education"><Education /></section>
+  <HelmetProvider>
+    <div className="min-h-screen bg-black text-white flex flex-col items-center px-6 md:px-16 lg:px-32 py-8">
+      <div className="max-w-2xl w-full">
+        <section id="home"><Home /></section>
+        <section id="about"><About /></section>
+        <section id="projects"><Projects /></section>
+        <section id="skills"><Skills /></section>
+        <section id="contact"><Contact /></section>
+        <section id="workexperience"><WorkExperience /></section>
+        <section id="education"><Education /></section>
+      </div>
+      <Footer />
+      <Dock />
     </div>
-    <Footer />
-    <Dock />
-  </div>
+  </HelmetProvider>
 );
 
 const App: FC = () => {
   return (
-    <Router>
-      <Suspense fallback={<FallbackLoader />}>
-        <Routes>
-          <Route path="/" element={<MainLayout />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+    <HelmetProvider>
+      <Router>
+        <Suspense fallback={<FallbackLoader />}>
+          <Routes>
+            <Route path="/" element={<MainLayout />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
 
-      {/* ToastContainer global para manejar notificaciones en toda la app */}
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        closeOnClick
-        pauseOnHover={false}
-        draggable={false}
-        theme="dark"
-      />
-    </Router>
+        {/* ToastContainer global para manejar notificaciones en toda la app */}
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnHover={false}
+          draggable={false}
+          theme="dark"
+        />
+      </Router>
+    </HelmetProvider>
   );
 };
 
