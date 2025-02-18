@@ -1,0 +1,17 @@
+{
+    "en": {
+      "translation": {
+        "home_greeting": "Hi, I'm",
+        "home_description": "Customer service expert becoming a full-stack developer. Passionate about programming who sits in front of his monitors every day to improve.",
+        "profile_picture_alt": "Profile picture"
+      }
+    },
+    "es": {
+      "translation": {
+        "home_greeting": "Hola, soy",
+        "home_description": "En proceso de convertirse en desarrollador full-stack. Apasionado por la programación que se sienta frente a sus monitores todos los días para aprender algo nuevo y mejorar.",
+        "profile_picture_alt": "Foto de perfil"
+      }
+    }
+  }
+  

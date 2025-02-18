@@ -1,299 +1,71 @@
-import i18n from "i18next";
+import i18n, { Resource, ResourceKey } from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import HttpApi from "i18next-http-backend";
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    detection: {
-      order: ['navigator', 'localStorage', 'sessionStorage', 'querystring', 'cookie'],
-      caches: ['localStorage', 'sessionStorage'],
-    },    
-    resources: {
-      en: {
-        translation: {
-          home: "Home",
-          about: "About Me",
-          projects: "Projects",
-          skills: "Skills",
-          contact: "Contact",
-          workexperience: "Work Experience",
-          education: "Education",
-          changeLanguage: "Change Language",
-          home_greeting: "Hi, I'm",
-          home_description: "Customer service expert becoming a full-stack developer. Passionate about programming who sits in front of his monitors every day to improve.",
-          profile_picture_alt: "Profile picture",
-          about_title: "About Me",
-          about_description: "My creativity is born from my passions:",
-          projects_title: "My Projects",
-          projects_description: "Here are some of the projects I have worked on recently.",
-          project_portfolio_v1_title: "Portfolio V1",
-          project_portfolio_v1_description: "I developed the first version of my portfolio website to showcase my skills, projects, and experience.",
-          project_landing_page_title: "Landing Page",
-          project_landing_page_description: "I developed an interactive landing page mockup focused on optimizing the presentation of key elements.",
-          project_birthday_invite_title: "Birthday Invitation",
-          project_birthday_invite_description: "I created an interactive invitation page for my birthday celebration with an RSVP form.",
-          skills_title: "Skills",
-          skills_description: "Here are some of the technologies and tools I specialize in.",
-          contact_title: "Contact Me",
-          contact_description: "Feel free to reach out by filling out the form below.",
-          contact_name: "Name",
-          contact_email: "Email",
-          contact_subject: "Subject",
-          contact_message: "Message",
-          contact_message_placeholder: "Enter your message...",
-          select_label: "Subject:",
-          select_placeholder: "Select a subject...",
-          select_collaboration: "Collaboration",
-          select_feedback: "Feedback",
-          select_general: "General Inquiry",
-          contact_error_name: "Name is required.",
-          contact_error_email: "Invalid email format.",
-          contact_error_subject: "Please select a subject.",
-          contact_error_message: "Message cannot be empty.",
-          contact_success: "Message sent successfully!",
-          contact_button_sending: "Sending...",
-          contact_button_send: "Send Message",
-          contact_error_general: "Failed to send message. Please try again later.",
-          contact_error_connection: "An error occurred. Please check your connection.",
-          privacy_accept: "I accept the",
-          privacy_policy_contact: "Privacy Policy",
-          footer_all_rights_reserved: "All rights reserved.",
-          work_experience: {
-            title: "Work Experience",
-            jobs: {
-              paypal: {
-                company: "PayPal",
-                title: "Customer Solutions Agent",
-                duration: "July 2023 - Present",
-              },
-              tp: {
-                company: "Teleperformance",
-                title: "Customer Solutions Agent - Team Lead",
-                duration: "August 2019 - June 2023",
-              },
-              sila: {
-                company: "Grupo SILA",
-                title: "Security Monitoring Operator",
-                duration: "November 2015 - July 2019",
-              },
-            },
-          },
-          cv_view: "View CV",
-          cv_download: "Download CV",
-          education_experience: {
-            title: "Education",
-            utel: "Latin American Technological University Online",
-            bachelors_it_admin: "Bachelor's Degree in Information Technology Administration",
-            feb_2022_present: "February 2022 - Present",
-            devf: "DEV.F",
-            master_coding: "Master in Coding: Backend, Frontend, and Fullstack Development",
-            jun_2024_present: "June 2024 - Present",
-          },
-          certificates: {
-            title: "Certificates",
-            "utel_institution": "Latin American Technological University Online",
-            "utel_diploma_systems_analysis": "International Diploma in Computer Systems Analysis",
-            "utel_completed_2025": "Completed 2025"
-          },
-          tweets: {
-            cat_lover: "My black cat, 15 years at my side: wise, independent, and affectionate in her own way. Her purr and gaze say it all. 😺❤️",
-            coder_life: "Being a developer means turning ideas into reality. Code, music, and many sleepless nights fixing bugs. 🤖 💾",
-            family_first: "Family means love, laughter, and unconditional support. Nothing beats a homemade meal shared with loved ones. 😊 🏡",
-            f1_fan: "F1 is about speed, strategy, and adrenaline. Every race shows that anything can be unpredictable. 🏁 🏎️",
-            in_love: "Having someone special is the best: love, support, and unique moments that make everything better. 😍 💕",
-            music_addict: "Music is always there: inspiring, motivating, and accompanying every moment. Life needs a great soundtrack. 🎵 🎸",
-            my_friends: "Nothing beats laughter, moments, and crazy adventures with friends. They always make life more fun. 🥳 🎮",
-            tars: "Interstellar is art: science, emotions, and a soundtrack that leaves you traveling through time. 🚀 🪐",
-            top_food: "Mexican food is on another level: tacos, mole, pozole, and that perfect touch of spice makes it the best. 🌶️ 🇲🇽",
-            wander_lust: "Traveling is the best investment: discover, learn, and create memories that last forever. ✈️ 🏖️",
-            zero_miedo: "Wrestling is pure passion. Heroes, villains, and the spectacle that always gives you chills. 💪 🔥",
-          },
-          privacy_policy: {
-            title: "Privacy Policy",
-            description: "This Privacy Policy describes how we collect, use, and protect your personal data when you visit our website. We comply with data protection laws applicable in the United States (CCPA), Mexico (LFPDPPP), Latin America, and Europe (GDPR).",
-            section1_title: "1. Information We Collect",
-            section1_description: "We may collect personal information such as your name, email, phone number, and IP address. We also collect data related to your interactions with our website using cookies and similar technologies.",
-            section2_title: "2. How We Use Your Information",
-            section2_description: "Your personal data is used to:",
-            section2_item1: "Provide and improve our services.",
-            section2_item2: "Respond to inquiries and support requests.",
-            section2_item3: "Send promotional and informational content (with your consent).",
-            section2_item4: "Ensure compliance with legal obligations.",
-            section3_title: "3. Your Rights",
-            section3_description: "Depending on your location, you have rights under various privacy laws:",
-            section3_item1: "GDPR (EU): Access, rectify, delete, restrict processing, and data portability.",
-            section3_item2: "CCPA (California, USA): Right to know, delete, opt-out of data sales, and non-discrimination.",
-            section3_item3: "Mexico (LFPDPPP): Access, rectify, cancel, and oppose (ARCO rights).",
-            section3_item4: "Latin America (General): Most countries have similar rights under their data protection laws.",
-            section4_title: "4. Data Sharing & Third Parties",
-            section4_description: "We do not sell your personal data. However, we may share it with:",
-            section4_item1: "Service providers that help us operate our website.",
-            section4_item2: "Legal authorities if required by law.",
-            section4_item3: "Third-party analytics providers (e.g., Google Analytics).",
-            section5_title: "5. Cookies and Tracking Technologies",
-            section5_description: "Our website uses cookies to enhance user experience. You can manage your cookie preferences through your browser settings.",
-            section6_title: "6. Data Retention",
-            section6_description: "We retain your data for as long as necessary to fulfill the purposes outlined in this policy unless a longer retention period is required by law.",
-            section7_title: "7. International Data Transfers",
-            section7_description: "If you are located outside the United States, your data may be transferred to servers in the U.S. and processed in accordance with applicable laws.",
-            section8_title: "8. Security Measures",
-            section8_description: "We implement industry-standard security measures to protect your data, but no method is 100% secure.",
-            section9_title: "9. Contact Information",
-            section9_description: "If you have any questions about this Privacy Policy, you can contact us at:",
-            contact_email: "Email",
-            section10_title: "10. Policy Updates",
-            section10_description: "We may update this policy from time to time. Any changes will be posted on this page with an updated effective date.",
-            last_updated: "Last updated: {{date}}",
-            go_back_button: "Go Back"
-          },
-        },
+const sections = [
+  "home",
+  "about",
+  "projects",
+  "skills",
+  "contact",
+  "footer",
+  "workexperience",
+  "education",
+  "privacypolicy"
+];
+
+// Definimos los recursos iniciales vacíos
+const resources: Resource = {
+  en: { translation: {} },
+  es: { translation: {} },
+};
+
+// Función optimizada para cargar traducciones en paralelo
+const loadResources = async () => {
+  try {
+    const translations = await Promise.all(
+      sections.map(async (section) => {
+        try {
+          const data = await import(`./locales/${section}.json`);
+          return { section, data };
+        } catch (error) {
+          console.error(`Error loading translation file: ${section}.json`, error);
+          return { section, data: null };
+        }
+      })
+    );
+
+    for (const { section, data } of translations) {
+      if (data?.en?.translation) {
+        (resources.en.translation as Record<string, ResourceKey>)[section] = data.en.translation;
+      }
+      if (data?.es?.translation) {
+        (resources.es.translation as Record<string, ResourceKey>)[section] = data.es.translation;
+      }
+    }
+  } catch (error) {
+    console.error("Error al cargar recursos de traducción:", error);
+  }
+
+  return resources;
+};
+
+// Inicializar i18n después de cargar las traducciones
+loadResources().then((resources) => {
+  i18n
+    .use(HttpApi)
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+      resources,
+      detection: {
+        order: ["navigator", "localStorage", "sessionStorage", "querystring", "cookie"],
+        caches: ["localStorage", "sessionStorage"],
       },
-      es: {
-        translation: {
-          home: "Inicio",
-          about: "Sobre mí",
-          projects: "Proyectos",
-          skills: "Habilidades",
-          contact: "Contacto",
-          workexperience: "Experiencia Laboral",
-          education: "Educación",
-          changeLanguage: "Cambiar idioma",
-          home_greeting: "Hola, soy",
-          home_description: "En proceso de convertirse en desarrollador full-stack. Apasionado por la programación que se sienta frente a sus monitores todos los días para aprender algo nuevo y mejorar.",
-          profile_picture_alt: "Foto de perfil",
-          about_title: "Sobre Mí",
-          about_description: "Mi creatividad nace de mis pasiones:",
-          projects_title: "Mis Proyectos",
-          projects_description: "Aquí hay algunos de los proyectos en los que he trabajado recientemente.",
-          project_portfolio_v1_title: "Portafolio V1",
-          project_portfolio_v1_description: "Desarrollé la primera versión de mi portafolio para mostrar mis habilidades, proyectos y experiencia.",
-          project_landing_page_title: "Página de Inicio",
-          project_landing_page_description: "Desarrollé un diseño interactivo de una landing page enfocada en optimizar la presentación de elementos clave.",
-          project_birthday_invite_title: "Invitación de Cumpleaños",
-          project_birthday_invite_description: "Creé una invitación interactiva para mi celebración de cumpleaños con un formulario de confirmación de asistencia.",
-          skills_title: "Habilidades",
-          skills_description: "Aquí están algunas de las tecnologías y herramientas en las que me especializo.",
-          contact_title: "Contáctame",
-          contact_description: "No dudes en escribirme rellenando el formulario a continuación.",
-          contact_name: "Nombre",
-          contact_email: "Correo electrónico",
-          contact_subject: "Asunto",
-          contact_message: "Mensaje",
-          contact_message_placeholder: "Escribe tu mensaje...",
-          select_label: "Asunto:",
-          select_placeholder: "Selecciona un asunto...",
-          select_collaboration: "Colaboración",
-          select_feedback: "Comentarios",
-          select_general: "Consulta General",
-          contact_error_name: "El nombre es obligatorio.",
-          contact_error_email: "Formato de correo inválido.",
-          contact_error_subject: "Por favor selecciona un asunto.",
-          contact_error_message: "El mensaje no puede estar vacío.",
-          contact_success: "¡Mensaje enviado con éxito!",
-          contact_button_sending: "Enviando...",
-          contact_button_send: "Enviar Mensaje",
-          contact_error_general: "No se pudo enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
-          contact_error_connection: "Ocurrió un error. Por favor verifica tu conexión.",
-          privacy_accept: "Acepto la",
-          privacy_policy_contact: "Política de Privacidad",
-          footer_all_rights_reserved: "Todos los derechos reservados.",
-          work_experience: {
-            title: "Experiencia Laboral",
-            jobs: {
-              paypal: {
-                company: "PayPal",
-                title: "Agente de Soluciones al Cliente",
-                duration: "Julio 2023 - Presente",
-              },
-              tp: {
-                company: "Teleperformance",
-                title: "Agente de Soluciones al Cliente - Líder de Equipo",
-                duration: "Agosto 2019 - Junio 2023",
-              },
-              sila: {
-                company: "Grupo SILA",
-                title: "Operador de Monitoreo de Seguridad",
-                duration: "Noviembre 2015 - Julio 2019",
-              },
-            },
-          },
-          cv_view: "Ver CV",
-          cv_download: "Descargar CV",
-          education_experience: {
-            title: "Educación",
-            utel: "Universidad Tecnológica Latinoamericana en Línea",
-            bachelors_it_admin: "Licenciatura en Administración de Tecnologías de la Información",
-            feb_2022_present: "Febrero 2022 - Presente",
-            devf: "DEV.F",
-            master_coding: "Maestría en Programación: Desarrollo Backend, Frontend y Fullstack",
-            jun_2024_present: "Junio 2024 - Presente",
-          },
-          certificates: {
-            title: "Certificados",
-            utel: "Universidad Tecnológica Latinoamericana en Línea",
-            diploma_systems_analysis: "Diplomado Internacional en Análisis de Sistemas Informáticos",
-            completed_2025: "Completado en 2025",
-          },
-          tweets: {
-            cat_lover: "Mi gatita negra, 15 años a mi lado: sabia, independiente y cariñosa a su manera. Su ronroneo y mirada lo dicen todo. 😺❤️",
-            coder_life: "Ser desarrollador significa convertir ideas en realidad. Código, música y muchas noches sin dormir arreglando bugs. 🤖 💾",
-            family_first: "La familia significa amor, risas y apoyo incondicional. Nada mejor que una comida casera con los que más quieres. 😊 🏡",
-            f1_fan: "La F1 es velocidad, estrategia y adrenalina. Cada carrera es una señal de que todo puede ser impredecible. 🏁 🏎️",
-            in_love: "Tener a alguien especial es lo mejor: amor, apoyo y momentos únicos que hacen que todo sea mejor. 😍 💕",
-            music_addict: "La música siempre está ahí: inspira, motiva y acompaña cada momento. La vida necesita una gran banda sonora. 🎵 🎸",
-            my_friends: "Nada supera las risas, momentos y locas aventuras con amigos. Siempre hacen la vida más divertida. 🥳 🎮",
-            tars: "Interestelar es arte: ciencia, emociones y una banda sonora que te deja viajando en el tiempo. 🚀 🪐",
-            top_food: "La comida mexicana está en otro nivel: tacos, mole, pozole y ese toque perfecto de picante la hacen la mejor. 🌶️ 🇲🇽",
-            wander_lust: "Viajar es la mejor inversión: descubres, aprendes y creas recuerdos que duran para siempre. ✈️ 🏖️",
-            zero_miedo: "La lucha libre es pura pasión. Héroes, villanos y el espectáculo que siempre pone la piel de gallina. 💪 🔥",
-          },
-          privacy_policy: {
-            title: "Política de Privacidad",
-            description: "Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos tus datos personales cuando visitas nuestro sitio web. Cumplimos con las leyes de protección de datos aplicables en Estados Unidos (CCPA), México (LFPDPPP), América Latina y Europa (GDPR).",
-            section1_title: "1. Información que Recopilamos",
-            section1_description: "Podemos recopilar información personal como tu nombre, correo electrónico, número de teléfono y dirección IP. También recopilamos datos relacionados con tus interacciones en nuestro sitio web mediante cookies y tecnologías similares.",
-            section2_title: "2. Cómo Usamos tu Información",
-            section2_description: "Tus datos personales se utilizan para:",
-            section2_item1: "Proporcionar y mejorar nuestros servicios.",
-            section2_item2: "Responder a consultas y solicitudes de soporte.",
-            section2_item3: "Enviar contenido promocional e informativo (con tu consentimiento).",
-            section2_item4: "Garantizar el cumplimiento de obligaciones legales.",
-            section3_title: "3. Tus Derechos",
-            section3_description: "Dependiendo de tu ubicación, tienes derechos bajo varias leyes de privacidad:",
-            section3_item1: "GDPR (UE): Acceso, rectificación, eliminación, restricción de procesamiento y portabilidad de datos.",
-            section3_item2: "CCPA (California, EE.UU.): Derecho a saber, eliminar, optar por no vender datos y no discriminación.",
-            section3_item3: "México (LFPDPPP): Acceso, rectificación, cancelación y oposición (derechos ARCO).",
-            section3_item4: "América Latina (General): La mayoría de los países tienen derechos similares bajo sus leyes de protección de datos.",
-            section4_title: "4. Compartición de Datos y Terceros",
-            section4_description: "No vendemos tus datos personales. Sin embargo, podemos compartirlos con:",
-            section4_item1: "Proveedores de servicios que nos ayudan a operar nuestro sitio web.",
-            section4_item2: "Autoridades legales si lo exige la ley.",
-            section4_item3: "Proveedores de análisis de terceros (por ejemplo, Google Analytics).",
-            section5_title: "5. Cookies y Tecnologías de Rastreo",
-            section5_description: "Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario. Puedes gestionar tus preferencias de cookies en la configuración de tu navegador.",
-            section6_title: "6. Retención de Datos",
-            section6_description: "Conservamos tus datos mientras sea necesario para cumplir los propósitos descritos en esta política, a menos que la ley requiera un período de retención más largo.",
-            section7_title: "7. Transferencias Internacionales de Datos",
-            section7_description: "Si te encuentras fuera de Estados Unidos, tus datos pueden transferirse a servidores en EE.UU. y procesarse de acuerdo con las leyes aplicables.",
-            section8_title: "8. Medidas de Seguridad",
-            section8_description: "Implementamos medidas de seguridad estándar para proteger tus datos, pero ningún método es 100% seguro.",
-            section9_title: "9. Información de Contacto",
-            section9_description: "Si tienes preguntas sobre esta Política de Privacidad, puedes contactarnos en:",
-            contact_email: "Correo electrónico",
-            section10_title: "10. Actualizaciones de la Política",
-            section10_description: "Podemos actualizar esta política ocasionalmente. Cualquier cambio se publicará en esta página con una fecha de actualización.",
-            last_updated: "Última actualización: {{date}}",
-            go_back_button: "Regresar"
-          },        
-        },
-      },
-    },
-    fallbackLng: "es",
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+      fallbackLng: "es",
+      interpolation: { escapeValue: false },
+    });
+});
 
 export default i18n;

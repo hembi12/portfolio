@@ -1,0 +1,57 @@
+{
+    "en": {
+      "translation": {
+        "contact_title": "Contact Me",
+        "contact_description": "Feel free to reach out by filling out the form below.",
+        "contact_name": "Name",
+        "contact_email": "Email",
+        "contact_subject": "Subject",
+        "contact_message": "Message",
+        "contact_message_placeholder": "Enter your message...",
+        "select_label": "Subject:",
+        "select_placeholder": "Select a subject...",
+        "select_collaboration": "Collaboration",
+        "select_feedback": "Feedback",
+        "select_general": "General Inquiry",
+        "contact_error_name": "Name is required.",
+        "contact_error_email": "Invalid email format.",
+        "contact_error_subject": "Please select a subject.",
+        "contact_error_message": "Message cannot be empty.",
+        "contact_success": "Message sent successfully!",
+        "contact_button_sending": "Sending...",
+        "contact_button_send": "Send Message",
+        "contact_error_general": "Failed to send message. Please try again later.",
+        "contact_error_connection": "An error occurred. Please check your connection.",
+        "privacy_accept": "I accept the",
+        "privacy_policy_contact": "Privacy Policy"
+      }
+    },
+    "es": {
+      "translation": {
+        "contact_title": "Contáctame",
+        "contact_description": "No dudes en escribirme rellenando el formulario a continuación.",
+        "contact_name": "Nombre",
+        "contact_email": "Correo electrónico",
+        "contact_subject": "Asunto",
+        "contact_message": "Mensaje",
+        "contact_message_placeholder": "Escribe tu mensaje...",
+        "select_label": "Asunto:",
+        "select_placeholder": "Selecciona un asunto...",
+        "select_collaboration": "Colaboración",
+        "select_feedback": "Comentarios",
+        "select_general": "Consulta General",
+        "contact_error_name": "El nombre es obligatorio.",
+        "contact_error_email": "Formato de correo inválido.",
+        "contact_error_subject": "Por favor selecciona un asunto.",
+        "contact_error_message": "El mensaje no puede estar vacío.",
+        "contact_success": "¡Mensaje enviado con éxito!",
+        "contact_button_sending": "Enviando...",
+        "contact_button_send": "Enviar Mensaje",
+        "contact_error_general": "No se pudo enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
+        "contact_error_connection": "Ocurrió un error. Por favor verifica tu conexión.",
+        "privacy_accept": "Acepto la",
+        "privacy_policy_contact": "Política de Privacidad"
+      }
+    }
+  }
+  

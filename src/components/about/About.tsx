@@ -6,12 +6,12 @@ import { useTranslation } from "react-i18next";
 
 const About = () => {
   const { t } = useTranslation();
-  const tweets = useTranslatedTweets() || [];
+  const tweets = useTranslatedTweets(); // ✅ Ahora se traducen correctamente
 
   return (
     <>
       <Helmet>
-        <title>Sobre mí - Héctor Martil</title>
+        <title>{t("about_title")} - Héctor Martil</title>
         <meta
           name="description"
           content="Descubre más sobre Héctor Martil, su trayectoria profesional y opiniones destacadas en redes sociales."

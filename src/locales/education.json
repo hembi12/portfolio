@@ -1,0 +1,41 @@
+{
+    "en": {
+      "translation": {
+        "education_experience": {
+          "title": "Education",
+          "utel": "Latin American Technological University Online",
+          "bachelors_it_admin": "Bachelor's Degree in Information Technology Administration",
+          "feb_2022_present": "February 2022 - Present",
+          "devf": "DEV.F",
+          "master_coding": "Master in Coding: Backend, Frontend, and Fullstack Development",
+          "jun_2024_present": "June 2024 - Present"
+        },
+        "certificates": {
+          "title": "Certificates",
+          "utel_institution": "Latin American Technological University Online",
+          "utel_diploma_systems_analysis": "International Diploma in Computer Systems Analysis",
+          "utel_completed_2025": "Completed 2025"
+        }
+      }
+    },
+    "es": {
+      "translation": {
+        "education_experience": {
+          "title": "Educación",
+          "utel": "Universidad Tecnológica Latinoamericana en Línea",
+          "bachelors_it_admin": "Licenciatura en Administración de Tecnologías de la Información",
+          "feb_2022_present": "Febrero 2022 - Presente",
+          "devf": "DEV.F",
+          "master_coding": "Maestría en Programación: Desarrollo Backend, Frontend y Fullstack",
+          "jun_2024_present": "Junio 2024 - Presente"
+        },
+        "certificates": {
+          "title": "Certificados",
+          "utel": "Universidad Tecnológica Latinoamericana en Línea",
+          "diploma_systems_analysis": "Diplomado Internacional en Análisis de Sistemas Informáticos",
+          "completed_2025": "Completado en 2025"
+        }
+      }
+    }
+  }
+  

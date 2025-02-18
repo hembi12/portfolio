@@ -18,7 +18,7 @@ const ProfilePicture: React.FC<ProfilePictureProps> = ({ alt, size = "medium" })
   return (
     <img
       src={profilePic}
-      alt={alt || t("profile_picture_alt", "Foto de perfil de Héctor Martil, Desarrollador Web especializado en React y TypeScript.")}
+      alt={alt || t("home.profile_picture_alt", "Foto de perfil de Héctor Martil, Desarrollador Web especializado en React y TypeScript.")}
       className={`${sizeClasses[size]} rounded-full object-cover`}
       role="img"
       aria-hidden={alt ? "false" : "true"}

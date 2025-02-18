@@ -1,0 +1,87 @@
+{
+    "en": {
+      "translation": {
+        "privacy_policy": {
+          "title": "Privacy Policy",
+          "description": "This Privacy Policy describes how we collect, use, and protect your personal data when you visit our website. We comply with data protection laws applicable in the United States (CCPA), Mexico (LFPDPPP), Latin America, and Europe (GDPR).",
+          "section1_title": "1. Information We Collect",
+          "section1_description": "We may collect personal information such as your name, email, phone number, and IP address. We also collect data related to your interactions with our website using cookies and similar technologies.",
+          "section2_title": "2. How We Use Your Information",
+          "section2_description": "Your personal data is used to:",
+          "section2_item1": "Provide and improve our services.",
+          "section2_item2": "Respond to inquiries and support requests.",
+          "section2_item3": "Send promotional and informational content (with your consent).",
+          "section2_item4": "Ensure compliance with legal obligations.",
+          "section3_title": "3. Your Rights",
+          "section3_description": "Depending on your location, you have rights under various privacy laws:",
+          "section3_item1": "GDPR (EU): Access, rectify, delete, restrict processing, and data portability.",
+          "section3_item2": "CCPA (California, USA): Right to know, delete, opt-out of data sales, and non-discrimination.",
+          "section3_item3": "Mexico (LFPDPPP): Access, rectify, cancel, and oppose (ARCO rights).",
+          "section3_item4": "Latin America (General): Most countries have similar rights under their data protection laws.",
+          "section4_title": "4. Data Sharing & Third Parties",
+          "section4_description": "We do not sell your personal data. However, we may share it with:",
+          "section4_item1": "Service providers that help us operate our website.",
+          "section4_item2": "Legal authorities if required by law.",
+          "section4_item3": "Third-party analytics providers (e.g., Google Analytics).",
+          "section5_title": "5. Cookies and Tracking Technologies",
+          "section5_description": "Our website uses cookies to enhance user experience. You can manage your cookie preferences through your browser settings.",
+          "section6_title": "6. Data Retention",
+          "section6_description": "We retain your data for as long as necessary to fulfill the purposes outlined in this policy unless a longer retention period is required by law.",
+          "section7_title": "7. International Data Transfers",
+          "section7_description": "If you are located outside the United States, your data may be transferred to servers in the U.S. and processed in accordance with applicable laws.",
+          "section8_title": "8. Security Measures",
+          "section8_description": "We implement industry-standard security measures to protect your data, but no method is 100% secure.",
+          "section9_title": "9. Contact Information",
+          "section9_description": "If you have any questions about this Privacy Policy, you can contact us at:",
+          "contact_email": "Email",
+          "section10_title": "10. Policy Updates",
+          "section10_description": "We may update this policy from time to time. Any changes will be posted on this page with an updated effective date.",
+          "last_updated": "Last updated: {{date}}",
+          "go_back_button": "Go Back"
+        }
+      }
+    },
+    "es": {
+      "translation": {
+        "privacy_policy": {
+          "title": "Política de Privacidad",
+          "description": "Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos tus datos personales cuando visitas nuestro sitio web. Cumplimos con las leyes de protección de datos aplicables en Estados Unidos (CCPA), México (LFPDPPP), América Latina y Europa (GDPR).",
+          "section1_title": "1. Información que Recopilamos",
+          "section1_description": "Podemos recopilar información personal como tu nombre, correo electrónico, número de teléfono y dirección IP. También recopilamos datos relacionados con tus interacciones en nuestro sitio web mediante cookies y tecnologías similares.",
+          "section2_title": "2. Cómo Usamos tu Información",
+          "section2_description": "Tus datos personales se utilizan para:",
+          "section2_item1": "Proporcionar y mejorar nuestros servicios.",
+          "section2_item2": "Responder a consultas y solicitudes de soporte.",
+          "section2_item3": "Enviar contenido promocional e informativo (con tu consentimiento).",
+          "section2_item4": "Garantizar el cumplimiento de obligaciones legales.",
+          "section3_title": "3. Tus Derechos",
+          "section3_description": "Dependiendo de tu ubicación, tienes derechos bajo varias leyes de privacidad:",
+          "section3_item1": "GDPR (UE): Acceso, rectificación, eliminación, restricción de procesamiento y portabilidad de datos.",
+          "section3_item2": "CCPA (California, EE.UU.): Derecho a saber, eliminar, optar por no vender datos y no discriminación.",
+          "section3_item3": "México (LFPDPPP): Acceso, rectificación, cancelación y oposición (derechos ARCO).",
+          "section3_item4": "América Latina (General): La mayoría de los países tienen derechos similares bajo sus leyes de protección de datos.",
+          "section4_title": "4. Compartición de Datos y Terceros",
+          "section4_description": "No vendemos tus datos personales. Sin embargo, podemos compartirlos con:",
+          "section4_item1": "Proveedores de servicios que nos ayudan a operar nuestro sitio web.",
+          "section4_item2": "Autoridades legales si lo exige la ley.",
+          "section4_item3": "Proveedores de análisis de terceros (por ejemplo, Google Analytics).",
+          "section5_title": "5. Cookies y Tecnologías de Rastreo",
+          "section5_description": "Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario. Puedes gestionar tus preferencias de cookies en la configuración de tu navegador.",
+          "section6_title": "6. Retención de Datos",
+          "section6_description": "Conservamos tus datos mientras sea necesario para cumplir los propósitos descritos en esta política, a menos que la ley requiera un período de retención más largo.",
+          "section7_title": "7. Transferencias Internacionales de Datos",
+          "section7_description": "Si te encuentras fuera de Estados Unidos, tus datos pueden transferirse a servidores en EE.UU. y procesarse de acuerdo con las leyes aplicables.",
+          "section8_title": "8. Medidas de Seguridad",
+          "section8_description": "Implementamos medidas de seguridad estándar para proteger tus datos, pero ningún método es 100% seguro.",
+          "section9_title": "9. Información de Contacto",
+          "section9_description": "Si tienes preguntas sobre esta Política de Privacidad, puedes contactarnos en:",
+          "contact_email": "Correo electrónico",
+          "section10_title": "10. Actualizaciones de la Política",
+          "section10_description": "Podemos actualizar esta política ocasionalmente. Cualquier cambio se publicará en esta página con una fecha de actualización.",
+          "last_updated": "Última actualización: {{date}}",
+          "go_back_button": "Regresar"
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,23 @@
+{
+    "en": {
+      "translation": {
+        "home": "Home",
+        "about": "About Me",
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact",
+        "changeLanguage": "Change Language"
+      }
+    },
+    "es": {
+      "translation": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "contact": "Contacto",
+        "changeLanguage": "Cambiar idioma"
+      }
+    }
+  }
+  

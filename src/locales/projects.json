@@ -1,0 +1,27 @@
+{
+    "en": {
+      "translation": {
+        "projects_title": "My Projects",
+        "projects_description": "Here are some of the projects I have worked on recently.",
+        "project_portfolio_v1_title": "Portfolio V1",
+        "project_portfolio_v1_description": "I developed the first version of my portfolio website to showcase my skills, projects, and experience.",
+        "project_landing_page_title": "Landing Page",
+        "project_landing_page_description": "I developed an interactive landing page mockup focused on optimizing the presentation of key elements.",
+        "project_birthday_invite_title": "Birthday Invitation",
+        "project_birthday_invite_description": "I created an interactive invitation page for my birthday celebration with an RSVP form."
+      }
+    },
+    "es": {
+      "translation": {
+        "projects_title": "Mis Proyectos",
+        "projects_description": "Aquí hay algunos de los proyectos en los que he trabajado recientemente.",
+        "project_portfolio_v1_title": "Portafolio V1",
+        "project_portfolio_v1_description": "Desarrollé la primera versión de mi portafolio para mostrar mis habilidades, proyectos y experiencia.",
+        "project_landing_page_title": "Página de Inicio",
+        "project_landing_page_description": "Desarrollé un diseño interactivo de una landing page enfocada en optimizar la presentación de elementos clave.",
+        "project_birthday_invite_title": "Invitación de Cumpleaños",
+        "project_birthday_invite_description": "Creé una invitación interactiva para mi celebración de cumpleaños con un formulario de confirmación de asistencia."
+      }
+    }
+  }
+  

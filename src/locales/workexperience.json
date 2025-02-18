@@ -1,0 +1,55 @@
+{
+    "en": {
+      "translation": {
+        "work_experience": {
+          "title": "Work Experience",
+          "jobs": {
+            "paypal": {
+              "company": "PayPal",
+              "title": "Customer Solutions Agent",
+              "duration": "July 2023 - Present"
+            },
+            "tp": {
+              "company": "Teleperformance",
+              "title": "Customer Solutions Agent - Team Lead",
+              "duration": "August 2019 - June 2023"
+            },
+            "sila": {
+              "company": "Grupo SILA",
+              "title": "Security Monitoring Operator",
+              "duration": "November 2015 - July 2019"
+            }
+          }
+        },
+        "cv_view": "View CV",
+        "cv_download": "Download CV"
+      }
+    },
+    "es": {
+      "translation": {
+        "work_experience": {
+          "title": "Experiencia Laboral",
+          "jobs": {
+            "paypal": {
+              "company": "PayPal",
+              "title": "Agente de Soluciones al Cliente",
+              "duration": "Julio 2023 - Presente"
+            },
+            "tp": {
+              "company": "Teleperformance",
+              "title": "Agente de Soluciones al Cliente - Líder de Equipo",
+              "duration": "Agosto 2019 - Junio 2023"
+            },
+            "sila": {
+              "company": "Grupo SILA",
+              "title": "Operador de Monitoreo de Seguridad",
+              "duration": "Noviembre 2015 - Julio 2019"
+            }
+          }
+        },
+        "cv_view": "Ver CV",
+        "cv_download": "Descargar CV"
+      }
+    }
+  }
+  

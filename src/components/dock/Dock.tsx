@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
 import useActiveSection from "./useActiveSection";
@@ -12,34 +12,46 @@ const Dock = () => {
   const { t, i18n } = useTranslation();
   const [hovered, setHovered] = useState<string | null>(null);
   const activeSection = useActiveSection();
+  
+  // Ref para evitar ejecución innecesaria de useEffect
+  const hasLoaded = useRef(false);
 
-  // Cargar idioma guardado en localStorage
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("appLanguage");
-    if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage);
-    }
-  }, [i18n]);
-
-  // Cambiar idioma y almacenarlo en localStorage
-  const toggleLanguage = () => {
-    const newLang = i18n.language === "es" ? "en" : "es";
-    i18n.changeLanguage(newLang);
-    localStorage.setItem("appLanguage", newLang);
-
-    toast.success(
-      newLang === "es" ? "Idioma cambiado a Español" : "Language changed to English",
-      {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "dark",
+    if (!hasLoaded.current) {
+      hasLoaded.current = true;
+      const savedLanguage = localStorage.getItem("appLanguage") || "es";
+      
+      if (savedLanguage !== i18n.language) {
+        i18n.changeLanguage(savedLanguage).catch((error) =>
+          console.error("Error cambiando el idioma:", error)
+        );
       }
-    );
-  };
+    }
+  }, [i18n]); // ✅ Se mantiene `i18n` como dependencia para evitar warnings
+
+  const toggleLanguage = useCallback(() => {
+    const newLang = i18n.language === "es" ? "en" : "es";
+
+    if (newLang !== i18n.language) {
+      i18n.changeLanguage(newLang)
+        .then(() => {
+          localStorage.setItem("appLanguage", newLang);
+          toast.success(
+            newLang === "es" ? "Idioma cambiado a Español" : "Language changed to English",
+            {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "dark",
+            }
+          );
+        })
+        .catch((error) => console.error("Error cambiando el idioma:", error));
+    }
+  }, [i18n]); // ✅ Se mantiene `i18n` en las dependencias para evitar warnings
 
   return (
     <div className="fixed bottom-5 left-1/2 -translate-x-1/2 bg-black border border-gray-100 bg-opacity-90 p-2 rounded-2xl shadow-xl flex">
@@ -48,7 +60,7 @@ const Dock = () => {
           key={id}
           id={id}
           Icon={Icon}
-          label={t(id)}
+          label={t(`dock.${id}`)}
           active={activeSection === id}
           hovered={hovered}
           setHovered={setHovered}
@@ -62,6 +74,7 @@ const Dock = () => {
         onMouseLeave={() => setHovered((prev) => (prev === "language" ? null : prev))}
         className="relative flex items-center justify-center p-2 rounded-full transition-all cursor-pointer text-gray-100 border-2 border-transparent"
         aria-label={t("changeLanguage")}
+        title={t("changeLanguage")}
       >
         <motion.div whileHover={{ scale: 1.3 }}>
           <Globe size={24} />
