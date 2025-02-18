@@ -7,9 +7,9 @@ i18n
   .use(initReactI18next)
   .init({
     detection: {
-      order: ['localStorage', 'sessionStorage', 'navigator', 'querystring', 'cookie'],
-      caches: ['localStorage', 'sessionStorage'], // Guardará el idioma detectado en localStorage y sessionStorage
-    },
+      order: ['navigator', 'localStorage', 'sessionStorage', 'querystring', 'cookie'],
+      caches: ['localStorage', 'sessionStorage'],
+    },    
     resources: {
       en: {
         translation: {
