@@ -10,7 +10,7 @@ const Introduction: React.FC = () => {
         <span className="flex items-center justify-center md:justify-start gap-2">
           {t("home_greeting")}{" "}
           <span className="relative">
-            <WordRotate words={["Héctor", "Martil"]} className="inline-flex" />
+            <WordRotate words={["Héctor","Martil"]} className="inline-flex" />
           </span>{" "}
           <span aria-hidden="true" role="img" className="ml-1">
             👋
