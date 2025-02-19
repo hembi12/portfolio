@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 interface SelectFieldProps {
   id: string;
@@ -10,21 +11,22 @@ interface SelectFieldProps {
 const SelectField: React.FC<SelectFieldProps> = ({ id, value, onChange, error }) => {
   const { t } = useTranslation();
 
-  const options = [
-    { value: "", label: t("select_placeholder") },
-    { value: "collaboration", label: t("select_collaboration") },
-    { value: "feedback", label: t("select_feedback") },
-    { value: "general", label: t("select_general") },
-  ];
+  // ✅ Se usa `useMemo` para evitar recalcular opciones en cada render
+  const options = useMemo(() => [
+    { value: "", label: t("contact.select_placeholder") },
+    { value: "collaboration", label: t("contact.select_collaboration") },
+    { value: "feedback", label: t("contact.select_feedback") },
+    { value: "general", label: t("contact.select_general") },
+  ], [t]);
 
   return (
     <div className="mb-4">
       <label className="block text-white text-md font-bold mb-2" htmlFor={id}>
-        {t("select_label")}
+        {t("contact.select_label")}
       </label>
       <select
         id={id}
-        value={value}
+        value={value} // ✅ Componente controlado correctamente
         onChange={onChange}
         required
         aria-invalid={!!error}
@@ -33,9 +35,9 @@ const SelectField: React.FC<SelectFieldProps> = ({ id, value, onChange, error })
           error ? "border-red-500" : "border-gray-400"
         }`}
       >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
+        {options.map(({ value, label }) => (
+          <option key={value} value={value}>
+            {label}
           </option>
         ))}
       </select>

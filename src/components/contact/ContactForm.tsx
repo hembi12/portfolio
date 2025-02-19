@@ -4,6 +4,7 @@ import InputField from "./InputField";
 import SelectField from "./SelectField";
 import TextAreaField from "./TextAreaField";
 import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || "";
 
@@ -17,15 +18,8 @@ const ContactForm: React.FC = () => {
     message: "",
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [accepted, setAccepted] = useState<boolean>(() => localStorage.getItem("privacyAccepted") === "true");
-
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [accepted, setAccepted] = useState(() => localStorage.getItem("privacyAccepted") === "true");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -34,30 +28,32 @@ const ContactForm: React.FC = () => {
     localStorage.setItem("privacyAccepted", String(accepted));
   }, [accepted]);
 
+  // ✅ Manejo del input sin `useCallback` (no es necesario)
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [id]: value }));
+  };
+
+  // ✅ Validación mejorada
   const validateForm = () => {
     let valid = true;
-    const newErrors = { name: "", email: "", subject: "", message: "" };
+    const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = t("contact_error_name", { defaultValue: "El nombre es obligatorio." });
+      newErrors.name = t("contact.contact_error_name", { defaultValue: "El nombre es obligatorio." });
       valid = false;
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = t("contact_error_email", { defaultValue: "El correo es obligatorio." });
+      newErrors.email = t("contact.contact_error_email", { defaultValue: "El correo es obligatorio." });
       valid = false;
-    } else {
-      const emailInput = document.createElement("input");
-      emailInput.type = "email";
-      emailInput.value = formData.email;
-      if (!emailInput.checkValidity()) {
-        newErrors.email = t("contact_error_email_invalid", { defaultValue: "El correo no es válido." });
-        valid = false;
-      }
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(formData.email)) {
+      newErrors.email = t("contact.contact_error_email_invalid", { defaultValue: "El correo no es válido." });
+      valid = false;
     }
 
     if (!formData.subject.trim()) {
-      newErrors.subject = t("contact_error_subject", { defaultValue: "El asunto es obligatorio." });
+      newErrors.subject = t("contact.contact_error_subject", { defaultValue: "El asunto es obligatorio." });
       valid = false;
     }
 
@@ -68,11 +64,6 @@ const ContactForm: React.FC = () => {
 
     setErrors(newErrors);
     return valid;
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [id]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -91,9 +82,7 @@ const ContactForm: React.FC = () => {
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
@@ -101,36 +90,49 @@ const ContactForm: React.FC = () => {
         setSuccess(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setError(t("contact_error_general", { defaultValue: "Hubo un problema enviando el formulario." }));
+        setError(t("contact.contact_error_general", { defaultValue: "Hubo un problema enviando el formulario." }));
       }
     } catch (err) {
       console.error("Error sending form:", err);
-      setError(t("contact_error_connection", { defaultValue: "No se pudo enviar el formulario. Verifica tu conexión." }));
+      setError(t("contact.contact_error_connection", { defaultValue: "No se pudo enviar el formulario. Verifica tu conexión." }));
     } finally {
       setLoading(false);
     }
   };
 
+  // ✅ Traducciones optimizadas con `useMemo`
+  const title = useMemo(() => t("contact_title", { defaultValue: "Contáctame" }), [t]);
+  const description = useMemo(() => t("contact_description", { defaultValue: "Déjame un mensaje y te responderé lo antes posible." }), [t]);
+  const buttonText = useMemo(() => (loading ? t("contact.contact_button_sending") : t("contact.contact_button_send")), [t, loading]);
+
   return (
     <div className="mt-6">
       <h2 className="bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-center md:text-left">
-        {t("contact_title", { defaultValue: "Contáctame" })}
+        {title}
       </h2>
       <p className="text-gray-100 text-sm sm:text-base md:text-md lg:text-lg mt-2 text-center max-w-3xl mx-auto md:text-left md:mx-0">
-        {t("contact_description", { defaultValue: "Déjame un mensaje y te responderé lo antes posible." })}
+        {description}
       </p>
       <form onSubmit={handleSubmit} className="mt-6 max-w-md mx-auto bg-black border border-white p-6 rounded-lg">
-        <InputField label={t("contact_name")} id="name" type="text" placeholder={t("contact_name")} value={formData.name} onChange={handleInputChange} error={errors.name} />
-        <InputField label={t("contact_email")} id="email" type="email" placeholder={t("contact_email")} value={formData.email} onChange={handleInputChange} error={errors.email} />
+        <InputField label={t("contact.contact_name")} id="name" type="text" placeholder={t("contact.contact_name")} value={formData.name} onChange={handleInputChange} error={errors.name} />
+        <InputField label={t("contact.contact_email")} id="email" type="email" placeholder={t("contact.contact_email")} value={formData.email} onChange={handleInputChange} error={errors.email} />
         <SelectField id="subject" value={formData.subject} onChange={handleInputChange} error={errors.subject} />
         <TextAreaField id="message" value={formData.message} onChange={handleInputChange} error={errors.message} />
         <PrivacyCheckbox accepted={accepted} setAccepted={setAccepted} />
 
+        {/* ✅ Accesibilidad mejorada en errores */}
         <p className="text-sm mt-2 text-center text-red-500" aria-live="polite">{error}</p>
         <p className="text-sm mt-2 text-center text-green-500" aria-live="polite">{success ? t("contact_success") : ""}</p>
 
-        <button type="submit" className={`w-full px-4 py-2 font-semibold rounded-lg transition ${accepted && !loading ? "bg-white text-black hover:bg-gray-300" : "bg-gray-100 text-gray-500 cursor-not-allowed"}`} disabled={!accepted || loading}>
-          {loading ? t("contact_button_sending") : t("contact_button_send")}
+        {/* ✅ Botón optimizado */}
+        <button
+          type="submit"
+          className={`w-full px-4 py-2 font-semibold rounded-lg transition ${
+            accepted && !loading ? "bg-white text-black hover:bg-gray-300" : "bg-gray-100 text-gray-500 cursor-not-allowed"
+          }`}
+          disabled={!accepted || loading}
+        >
+          {buttonText}
         </button>
       </form>
     </div>
