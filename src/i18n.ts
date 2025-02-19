@@ -14,6 +14,7 @@ const sections = [
   "education",
   "privacypolicy",
   "notfound",
+  "dock"
 ];
 
 // Definimos los recursos iniciales vacíos

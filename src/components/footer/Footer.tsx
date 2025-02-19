@@ -5,14 +5,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white py-6 mt-12 mb-12" lang={i18n.language}>
+    <footer className="bg-black text-white py-6 mt-12 mb-12" lang={i18n.language} aria-labelledby="footer-title">
       <div className="w-full border-t border-gray-100 mb-4"></div>
+
       <div className="container max-w-screen-lg mx-auto px-4 flex flex-col items-center text-center">
-        <p className="text-sm">
+        <small id="footer-title" className="text-sm">
           <span aria-hidden="true">&copy; {currentYear} </span>
-          <span>{t("footer.footer_all_rights_reserved")}</span>
-        </p>
-        <div className="flex space-x-4 mt-4 sm:mt-2">
+          {t("footer.all_rights_reserved")}
+        </small>
+
+        <nav className="flex space-x-4 mt-4 sm:mt-2" aria-label="Redes sociales">
           <a
             href="https://github.com/hembi12"
             target="_blank"
@@ -31,7 +33,7 @@ const Footer = () => {
           >
             LinkedIn
           </a>
-        </div>
+        </nav>
       </div>
     </footer>
   );
