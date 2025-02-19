@@ -101,8 +101,8 @@ const ContactForm: React.FC = () => {
   };
 
   // ✅ Traducciones optimizadas con `useMemo`
-  const title = useMemo(() => t("contact_title", { defaultValue: "Contáctame" }), [t]);
-  const description = useMemo(() => t("contact_description", { defaultValue: "Déjame un mensaje y te responderé lo antes posible." }), [t]);
+  const title = useMemo(() => t("contact.contact_title", { defaultValue: "Contáctame" }), [t]);
+  const description = useMemo(() => t("contact.contact_description", { defaultValue: "Déjame un mensaje y te responderé lo antes posible." }), [t]);
   const buttonText = useMemo(() => (loading ? t("contact.contact_button_sending") : t("contact.contact_button_send")), [t, loading]);
 
   return (

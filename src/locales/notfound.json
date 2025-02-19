@@ -1,0 +1,19 @@
+{
+    "en": {
+      "translation": {
+        "notfound_title": "Page Not Found",
+        "notfound_image_alt": "404 Not Found",
+        "notfound_button_text": "Go Back Home",
+        "notfound_button_aria": "Go back to the home page"
+      }
+    },
+    "es": {
+      "translation": {
+        "notfound_title": "Página no encontrada",
+        "notfound_image_alt": "404 No encontrado",
+        "notfound_button_text": "Volver al inicio",
+        "notfound_button_aria": "Regresar a la página de inicio"
+      }
+    }
+  }
+  

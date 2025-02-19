@@ -6,9 +6,9 @@ const Projects = () => {
   const { t } = useTranslation();
 
   // ✅ Traducciones optimizadas con useMemo para evitar renders innecesarios
-  const title = useMemo(() => t("projects_title", { defaultValue: "Mis Proyectos" }), [t]);
+  const title = useMemo(() => t("projects.projects_title", { defaultValue: "Mis Proyectos" }), [t]);
   const description = useMemo(
-    () => t("projects_description", { defaultValue: "Aquí puedes ver algunos de mis proyectos recientes." }),
+    () => t("projects.projects_description", { defaultValue: "Aquí puedes ver algunos de mis proyectos recientes." }),
     [t]
   );
 

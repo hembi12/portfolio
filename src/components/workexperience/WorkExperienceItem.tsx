@@ -6,8 +6,6 @@ interface WorkExperienceItemProps {
 }
 
 const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({ company, title, duration, logo }) => {
-  const fallbackLogo = "/src/assets/default-company-logo.png"; // Imagen de respaldo
-
   return (
     <div className="flex flex-col space-y-2 pb-4">
       <div className="flex items-center justify-between space-x-4">
@@ -16,7 +14,10 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({ company, title,
             src={logo}
             alt={`${company} logo`}
             className="w-12 h-12 rounded-full object-cover"
-            onError={(e) => (e.currentTarget.src = fallbackLogo)} // Imagen de respaldo si falla
+            onError={(e) => {
+              e.currentTarget.src = "/src/assets/default-company-logo.png"; // ✅ Carga imagen de respaldo solo si falla
+              e.currentTarget.alt = "Default company logo"; // ✅ Mejora accesibilidad
+            }}
           />
           <div>
             <h3 className="text-gray-100 text-lg font-semibold">{company}</h3>

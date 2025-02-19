@@ -1,33 +1,30 @@
 import { Eye, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import cvFile from "/src/assets/Hector_Martil_CV.pdf"; // Importar el archivo PDF
+import cvFile from "/src/assets/Hector_Martil_CV.pdf"; // ✅ Import seguro
 
 const CVButtons = () => {
   const { t } = useTranslation();
-
-  // Si el archivo no está disponible, se muestra un mensaje en lugar de los botones
-  if (!cvFile) {
-    return <p className="text-gray-500 text-center mt-4">{t("cv_unavailable")}</p>;
-  }
 
   return (
     <div className="flex justify-center md:justify-start space-x-4 mt-2">
       <a
         href={cvFile}
         target="_blank"
-        rel="noopener noreferrer"
-        aria-label={t("cv_view")}
+        rel="noopener noreferrer" // ✅ Seguridad mejorada
         className="bg-white text-black font-semibold px-4 py-2 rounded-lg hover:bg-gray-300 transition flex items-center gap-2"
       >
-        <Eye size={16} /> {t("cv_view")}
+        <Eye size={16} aria-hidden="true" /> {/* ✅ Mejor accesibilidad */}
+        {t("workexperience.cv_view")}
       </a>
       <a
         href={cvFile}
         download="Hector_Martil_CV.pdf"
-        aria-label={t("cv_download")}
+        target="_blank" // ✅ Previene problemas con `download` en algunos navegadores
+        rel="noopener noreferrer" // ✅ Seguridad mejorada
         className="bg-white text-black font-semibold px-4 py-2 rounded-lg hover:bg-gray-300 transition flex items-center gap-2"
       >
-        <Download size={16} /> {t("cv_download")}
+        <Download size={16} aria-hidden="true" /> {/* ✅ Mejor accesibilidad */}
+        {t("workexperience.cv_download")}
       </a>
     </div>
   );

@@ -12,7 +12,8 @@ const sections = [
   "footer",
   "workexperience",
   "education",
-  "privacypolicy"
+  "privacypolicy",
+  "notfound",
 ];
 
 // Definimos los recursos iniciales vacíos
